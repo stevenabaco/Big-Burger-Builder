@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import BuildControls from "../../components/Burger/BuildControls/BuildControls";
 import Burger from '../../components/Burger/Burger';
+
 
 class BurgerBuilder extends Component {
 
@@ -17,7 +19,7 @@ class BurgerBuilder extends Component {
 			<>
                 <div><Burger
                     ingredients={this.state.ingredients} /></div>
-				<div>Build Controls</div>
+				<div><BuildControls /></div>
 			</>
 		);
 	}
