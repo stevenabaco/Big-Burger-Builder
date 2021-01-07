@@ -3,7 +3,7 @@ import BuildControls from "../../components/Burger/BuildControls/BuildControls";
 import Burger from "../../components/Burger/Burger";
 
 const INGREDIENT_PRICES = {
-	salad: 0.5,
+	lettuce: 0.5,
 	cheese: 0.7,
 	meat: 1.5,
 	bacon: 1.25,
@@ -27,9 +27,10 @@ class BurgerBuilder extends Component {
 			...this.state.ingredients,
 		};
 		updatedIngredients[type] = updatedCount;
-		const priceAddition = INGREDIENT_PRICES[type];
+        const priceAddition = INGREDIENT_PRICES[type];
 		const oldPrice = this.state.totalPrice;
-		const newPrice = oldPrice + priceAddition;
+        const newPrice = oldPrice + priceAddition;
+        
 		this.setState({ totalPrice: newPrice, ingredients: updatedIngredients });
 	};
 
@@ -66,6 +67,7 @@ class BurgerBuilder extends Component {
 						ingredientAdded={this.addIngredientHandler}
                         ingredientRemoved={this.removeIngredientHandler}
                         disabled={disabledInfo}
+                        price = {this.state.totalPrice}
 					/>
 				</div>
 			</>
