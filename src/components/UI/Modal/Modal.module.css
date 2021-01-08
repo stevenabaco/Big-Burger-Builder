@@ -4,12 +4,12 @@
     background-color: white;
     width: 70%;
     border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px black;
+    box-shadow: 3px 8px 20px black;
     padding: 16px;
     left: 15%;
-    top: 30%;
+    top: 30%; 
     box-sizing: border-box;
-    transition: all 0.3s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 @media (min-width: 600px) {
