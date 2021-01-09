@@ -38,8 +38,8 @@ class BurgerBuilder extends Component {
 				return ingredients[ingKey];
 			})
 			.reduce((sum, el) => {
-				console.log("sum", sum);
-				console.log("curValue", el);
+				// console.log("sum", sum);
+				// console.log("curValue", el);
 				return sum + el;
 			}, 0);
 		this.setState({ purchasable: sum > 0 });
