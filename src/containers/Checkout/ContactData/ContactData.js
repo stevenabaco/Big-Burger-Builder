@@ -53,9 +53,9 @@ class ContactData extends Component {
 				elementType: "select",
 				elementConfig: {
 					options: [
-						{ value: 'fastest', displayValue: 'Fastest' },
-						{ value: 'cheapest', displayValue: 'Cheapest' }  
-					]
+						{ value: "fastest", displayValue: "Fastest" },
+						{ value: "cheapest", displayValue: "Cheapest" },
+					],
 				},
 				value: "",
 			},
@@ -89,8 +89,7 @@ class ContactData extends Component {
 			formElementsArray.push({
 				id: key,
 				config: this.state.orderForm[key],
-
-			})
+			});
 		}
 		let form = (
 			<form>
@@ -102,7 +101,7 @@ class ContactData extends Component {
 						value={formElement.config.value}
 					/>
 				))}
-				
+
 				<Button btnType='Success' clicked={this.orderHandler}>
 					ORDER
 				</Button>
