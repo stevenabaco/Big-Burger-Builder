@@ -12,6 +12,6 @@ If the user chooses to continue, an SVG image of the Burger is rendered, to allo
 
 User Authentication is also implemented, which alows the user to keep a history of past orders, which are viewable by clicking on button.
 
-## Pasckages
+## Languages & Packages
 
 Developed using HTML, CSS, ReactJS, Redux, React-Redux.
