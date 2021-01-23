@@ -69,6 +69,7 @@ class BurgerBuilder extends Component {
 						ingredientRemoved={this.props.onIngredientRemoved}
 						disabled={disabledInfo}
 						purchasable={this.updatePurchaseState(this.props.ings)}
+						isAuth={this.props.isAuthenticated}
 						ordered={this.purchaseHandler}
 						price={this.props.price}
 					/>
@@ -103,6 +104,7 @@ const mapStateToProps = (state) => {
 		ings: state.burgerBuilder.ingredients,
 		price: state.burgerBuilder.totalPrice,
 		error: state.burgerBuilder.error,
+		isAuthenticated: state.auth.token !== null,
 	};
 };
 
