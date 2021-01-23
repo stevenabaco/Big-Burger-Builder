@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import {connect} from "react-redux";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 import axios from "../../axios-orders";
 import BuildControls from "../../components/Burger/BuildControls/BuildControls";
 import Burger from "../../components/Burger/Burger";
@@ -20,11 +20,15 @@ class BurgerBuilder extends Component {
 		this.props.onInitIngredients();
 	}
 	purchaseHandler = () => {
-		this.setState({purchasing: true});
+		if (this.props.isAuthenticated) {
+			this.setState({ purchasing: true });
+		} else {
+			this.props.history.push("/auth");
+		}
 	};
 
 	purchaseCancelHandler = () => {
-		this.setState({purchasing: false});
+		this.setState({ purchasing: false });
 	};
 
 	updatePurchaseState(ingredients) {
@@ -110,12 +114,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onIngredientAdded: (ingName) =>
-			dispatch(actions.addIngredient(ingName)),
+		onIngredientAdded: (ingName) => dispatch(actions.addIngredient(ingName)),
 		onIngredientRemoved: (ingName) =>
 			dispatch(actions.removeIngredient(ingName)),
 		onInitIngredients: () => dispatch(actions.initIngredients()),
-		onInitPurchase: () => dispatch(actions.purchaseInit())
+		onInitPurchase: () => dispatch(actions.purchaseInit()),
 	};
 };
 
