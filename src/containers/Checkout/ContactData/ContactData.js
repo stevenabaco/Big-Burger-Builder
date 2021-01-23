@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import {connect} from "react-redux";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 import axios from "../../../axios-orders";
 import Button from "../../../components/UI/Button/Button";
 import classes from "./ContactData.module.css";
@@ -82,8 +82,8 @@ class ContactData extends Component {
 				elementType: "select",
 				elementConfig: {
 					options: [
-						{value: "fastest", displayValue: "Fastest"},
-						{value: "cheapest", displayValue: "Cheapest"},
+						{ value: "fastest", displayValue: "Fastest" },
+						{ value: "cheapest", displayValue: "Cheapest" },
 					],
 				},
 				value: "Fastest",
@@ -148,7 +148,7 @@ class ContactData extends Component {
 		for (let inputIdentifier in updatedOrderForm) {
 			formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
 		}
-		this.setState({orderForm: updatedOrderForm, formIsValid: formIsValid});
+		this.setState({ orderForm: updatedOrderForm, formIsValid: formIsValid });
 	};
 
 	render() {
@@ -196,13 +196,14 @@ const mapStateToProps = (state) => {
 		ings: state.burgerBuilder.ingredients,
 		price: state.burgerBuilder.totalPrice,
 		loading: state.order.loading,
-		token: state.auth.token
+		token: state.auth.token,
 	};
 };
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onOrderBurger: (orderData,token) => dispatch(actions.purchaseBurger(orderData, token)),
+		onOrderBurger: (orderData, token) =>
+			dispatch(actions.purchaseBurger(orderData, token)),
 	};
 };
 
