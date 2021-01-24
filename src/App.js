@@ -19,7 +19,7 @@ class App extends Component {
 			<Switch>
 				<Route path="/auth" component={Auth} />
 				<Route exact path="/" component={BurgerBuilder} />
-				
+				<Redirect to="/" />
 			</Switch>
 		);
 
