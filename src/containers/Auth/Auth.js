@@ -1,13 +1,13 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 
 import Input from "../../components/UI/Input/Input";
 import Button from "../../components/UI/Button/Button";
-import Spinner from '../../components/UI/Spinner/Spinner';
+import Spinner from "../../components/UI/Spinner/Spinner";
 import classes from "./Auth.module.css";
 import * as actions from "../../store/actions/index";
-import { updateObject, checkValidity } from '../../shared/utility';
+import { updateObject, checkValidity } from "../../shared/utility";
 
 class Auth extends Component {
 	state = {
@@ -16,7 +16,7 @@ class Auth extends Component {
 				elementType: "input",
 				elementConfig: {
 					type: "email",
-					placeholder: "Mail Address",
+					placeholder: "Email",
 				},
 				value: "",
 				validation: {
@@ -41,7 +41,7 @@ class Auth extends Component {
 				touched: false,
 			},
 		},
-		isSignup: true,
+		isSignup: false,
 	};
 
 	componentDidMount() {
@@ -121,12 +121,27 @@ class Auth extends Component {
 				{authRedirect}
 				{errorMessage}
 				<form onSubmit={this.submitHandler}>
+					{this.state.isSignup
+						? (<h1>CREATE ACCOUNT</h1>)
+						: (<h1>LOGIN</h1>)}
 					{form}
-					<Button btnType="Success">SUBMIT</Button>
+					<Button btnType="Success">SUBMIT FORM</Button>
 				</form>
 				<Button clicked={this.switchAuthModeHandler} btnType="Danger">
-					SWITCH TO {this.state.isSignup ? "SIGNIN" : "SIGNUP"}
+					{this.state.isSignup
+						? "SWICH TO LOGIN FORM"
+						: "NEW USER... REGISTER NOW"}
 				</Button>
+				<div>
+					<h3>
+						For a demo of the app you can use <br></br>
+						<br></br>
+						<span style={{ color: "purple" }}>
+							Email: test@test.com <br></br>
+							Password: 123456
+						</span>
+					</h3>
+				</div>
 			</div>
 		);
 	}
