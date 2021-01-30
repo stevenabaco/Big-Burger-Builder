@@ -6,6 +6,30 @@
     border: 1px solid #eee;
     padding: 10px;
     box-sizing: border-box;
+    align-items: center;
+}
+
+.SubmitFormBtn {
+	background-color: #22201d;
+	outline: none;
+	cursor: pointer;
+	border: 1px solid #1302aa;
+	color: white;
+	font-family: inherit;
+	font-size: 1.2em;
+	padding: 15px 30px;
+	transition: all 0.2s ease-in-out;
+	margin: 30px;
+	border-radius: 15px;
+	align-self: center;
+}
+
+.SubmitFormBtn:hover,
+.SubmitFormBtn:active {
+	background-color: #0e3101;
+	border: 1px solid white;
+	box-shadow: 2px 4px 20px #35260a;
+	transform: scaleX(20px);
 }
 
 @media (min-width: 600px) {

@@ -121,20 +121,18 @@ class Auth extends Component {
 				{authRedirect}
 				{errorMessage}
 				<form onSubmit={this.submitHandler}>
-					{this.state.isSignup
-						? (<h1>CREATE ACCOUNT</h1>)
-						: (<h1>LOGIN</h1>)}
+					{this.state.isSignup ? <h1>CREATE ACCOUNT</h1> : <h1>LOGIN</h1>}
 					{form}
-					<Button btnType="Success">SUBMIT FORM</Button>
+					<button className={classes.SubmitFormBtn}>SUBMIT FORM</button>
 				</form>
 				<Button clicked={this.switchAuthModeHandler} btnType="Danger">
 					{this.state.isSignup
 						? "SWICH TO LOGIN FORM"
-						: "NEW USER... REGISTER NOW"}
+						: "CREATE AN ACCOUNT NOW"}
 				</Button>
 				<div>
 					<h3>
-						For a demo of the app you can use <br></br>
+						For a demo of the app you can use the following to log in without creating an account <br></br>
 						<br></br>
 						<span style={{ color: "purple" }}>
 							Email: test@test.com <br></br>
