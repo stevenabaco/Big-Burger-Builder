@@ -40,7 +40,7 @@ const [authForm, setAuthForm] = useState({
 				touched: false,
 			},
 		})
-		const [isSignup, setIsSignup] = useState(true)
+		const [isSignup, setIsSignup] = useState(false) //use (false) to start on Login Page
 	
 
 	useEffect(() => {
